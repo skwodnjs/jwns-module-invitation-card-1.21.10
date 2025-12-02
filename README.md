@@ -1,25 +1,20 @@
+# JWN's Invitation Module
 
-Installation information
-=======
+Minecraft 서버에서 **초대장(Invitation Item)** 을 사용하여 플레이어를 화이트리스트에 자동으로 추가할 수 있는 모드입니다.  
+서버 운영자가 직접 `/whitelist add` 명령을 입력하지 않아도, 플레이어가 아이템을 사용해 원하는 닉네임을 등록할 수 있습니다.  
+기능이 필요한 다른 모드와 함께 사용할 수 있습니다.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## 📌 주요 기능
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+1. 플레이어가 **초대장(Invitation Item)** 을 획득합니다.
+2. 손에 들고 우클릭하면 GUI가 열립니다.
+3. 초대하고 싶은 플레이어의 Minecraft 닉네임을 입력합니다.
+4. “확인”을 누르면 whitelist에 자동 등록됩니다.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## ⚠️ 주의 사항
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+- 서버의 화이트리스트 기능이 활성화되어 있어야 합니다.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## 📜 라이선스
+
+MIT License
