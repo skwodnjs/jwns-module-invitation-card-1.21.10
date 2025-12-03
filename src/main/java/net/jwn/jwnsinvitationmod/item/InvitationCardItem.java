@@ -53,12 +53,6 @@ public class InvitationCardItem extends Item {
             } else {
                 server.getCommands().performPrefixedCommand(sourceStack, cmd);
             }
-
-//            whitelist.clear();
-//            for (UserWhiteListEntry entry : whitelist.getEntries()) {
-//                assert entry.getUser() != null;
-//                player.displayClientMessage(Component.literal("WHITELIST: " + entry.getUser().name()), false);
-//            }
         }
         return InteractionResult.SUCCESS;
     }
