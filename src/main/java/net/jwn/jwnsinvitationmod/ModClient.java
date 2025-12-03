@@ -1,20 +1,19 @@
-package net.jwn.invitationmod;
+package net.jwn.jwnsinvitationmod;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
-@Mod(value = ExampleMod.MOD_ID, dist = Dist.CLIENT)
+@net.neoforged.fml.common.Mod(value = Mod.MOD_ID, dist = Dist.CLIENT)
 // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-@EventBusSubscriber(modid = ExampleMod.MOD_ID, value = Dist.CLIENT)
-public class ExampleModClient {
-    public ExampleModClient(ModContainer container) {
+@EventBusSubscriber(modid = Mod.MOD_ID, value = Dist.CLIENT)
+public class ModClient {
+    public ModClient(ModContainer container) {
         // Allows NeoForge to create a config screen for this mod's configs.
         // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
         // Do not forget to add translations for your config options to the en_us.json file.

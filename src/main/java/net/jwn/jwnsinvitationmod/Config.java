@@ -1,4 +1,4 @@
-package net.jwn.invitationmod;
+package net.jwn.jwnsinvitationmod;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
