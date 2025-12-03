@@ -1,3 +1,5 @@
 {
-  "item.jwnsinvitationmod.invitation_card": "Invitation Card"
+  "item.jwnsinvitationmod.invitation_card": "Invitation Card",
+  "message.jwnsinvitationmod.whitelist.clear": "The whitelist has been cleared.",
+  "message.jwnsinvitationmod.whitelist.disabled": "The whitelist system is not enabled on this server."
 }

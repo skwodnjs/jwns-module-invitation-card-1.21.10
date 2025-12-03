@@ -1,3 +1,5 @@
 {
-  "item.jwnsinvitationmod.invitation_card": "초대장"
+  "item.jwnsinvitationmod.invitation_card": "초대장",
+  "message.jwnsinvitationmod.whitelist.clear": "화이트리스트가 모두 초기화되었습니다.",
+  "message.jwnsinvitationmod.whitelist.disabled": "이 서버에서는 화이트리스트 기능이 활성화되어 있지 않습니다."
 }
