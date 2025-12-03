@@ -9,11 +9,11 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
-@net.neoforged.fml.common.Mod(value = Mod.MOD_ID, dist = Dist.CLIENT)
+@net.neoforged.fml.common.Mod(value = JWNsMod.MOD_ID, dist = Dist.CLIENT)
 // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-@EventBusSubscriber(modid = Mod.MOD_ID, value = Dist.CLIENT)
-public class ModClient {
-    public ModClient(ModContainer container) {
+@EventBusSubscriber(modid = JWNsMod.MOD_ID, value = Dist.CLIENT)
+public class JWNsModClient {
+    public JWNsModClient(ModContainer container) {
         // Allows NeoForge to create a config screen for this mod's configs.
         // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
         // Do not forget to add translations for your config options to the en_us.json file.
