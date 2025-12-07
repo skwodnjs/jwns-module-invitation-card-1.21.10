@@ -2,7 +2,10 @@
   "item.jwnsinvitationmod.invitation_card": "Invitation Card",
   "message.jwnsinvitationmod.whitelist.clear": "The whitelist has been cleared.",
   "message.jwnsinvitationmod.whitelist.disabled": "The whitelist system is not enabled on this server.",
+  "message.jwnsinvitationmod.whitelist.added": "You have invited %s to this server.",
+  "message.jwnsinvitationmod.whitelist.already_exists": "%s is already whitelisted.",
 
   "gui.jwnsinvitationmod.invitaiton_card.comment": "Please enter the name of the player to invite.",
-  "gui.jwnsinvitationmod.invitaiton_card.button": "Invite"
+  "gui.jwnsinvitationmod.invitaiton_card.button": "Invite",
+  "jwnsinvitationmod.networking.failed": "Invitation failed"
 }

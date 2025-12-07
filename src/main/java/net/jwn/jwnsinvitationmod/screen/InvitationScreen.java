@@ -1,6 +1,7 @@
 package net.jwn.jwnsinvitationmod.screen;
 
 import net.jwn.jwnsinvitationmod.JWNsMod;
+import net.jwn.jwnsinvitationmod.networking.packet.InvitationC2SPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
@@ -10,8 +11,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-
-import java.util.UUID;
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
 public class InvitationScreen extends Screen {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "textures/gui/invitation.png");
@@ -46,9 +46,8 @@ public class InvitationScreen extends Screen {
                 button_x, button_y, BUTTON_WIDTH, BUTTON_HEIGHT, widgetSprites,
                 button -> {
                     assert Minecraft.getInstance().player != null;
-                    Minecraft.getInstance().player.displayClientMessage(
-                            Component.literal(UUID.nameUUIDFromBytes(("OfflinePlayer:" + name).getBytes()).toString()), false);
-                    Minecraft.getInstance().player.displayClientMessage(Component.literal(name), false);
+                    InvitationC2SPacket packet = new InvitationC2SPacket(Minecraft.getInstance().player.getPlainTextName(), name);
+                    ClientPacketDistributor.sendToServer(packet);
                     this.onClose();
                 });
 
