@@ -16,10 +16,10 @@ public class ClearWhitelistCommand {
 
     public ClearWhitelistCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("whitelist")
-                .then(Commands.literal("clear")
                 .requires(source ->
                         source.getServer().isDedicatedServer()
                 )
+                .then(Commands.literal("clear")
                 .executes(this::execute)));
     }
 

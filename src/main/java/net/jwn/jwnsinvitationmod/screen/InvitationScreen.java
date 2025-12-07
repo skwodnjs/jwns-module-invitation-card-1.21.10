@@ -11,6 +11,8 @@ import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
+import java.util.UUID;
+
 public class InvitationScreen extends Screen {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "textures/gui/invitation.png");
     private static final ResourceLocation BUTTON = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "button01");
@@ -44,6 +46,8 @@ public class InvitationScreen extends Screen {
                 button_x, button_y, BUTTON_WIDTH, BUTTON_HEIGHT, widgetSprites,
                 button -> {
                     assert Minecraft.getInstance().player != null;
+                    Minecraft.getInstance().player.displayClientMessage(
+                            Component.literal(UUID.nameUUIDFromBytes(("OfflinePlayer:" + name).getBytes()).toString()), false);
                     Minecraft.getInstance().player.displayClientMessage(Component.literal(name), false);
                     this.onClose();
                 });
