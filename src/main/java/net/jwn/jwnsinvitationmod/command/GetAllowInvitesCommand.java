@@ -12,6 +12,7 @@ public class GetAllowInvitesCommand {
         dispatcher.register(
             Commands.literal("gamerule")
             .then(Commands.literal("allowInvites")
+            .requires(source -> source.getServer().isDedicatedServer())
             .then(Commands.literal("get")
             .executes(ctx -> {
                 InvitationSettingsData data = InvitationSettingsData.get(ctx.getSource().getServer());

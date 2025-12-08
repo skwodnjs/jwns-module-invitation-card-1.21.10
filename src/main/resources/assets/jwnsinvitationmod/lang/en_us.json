@@ -1,5 +1,6 @@
 {
   "item.jwnsinvitationmod.invitation_card": "Invitation Card",
+
   "message.jwnsinvitationmod.whitelist.clear": "The whitelist has been cleared.",
   "message.jwnsinvitationmod.whitelist.not_using_whitelist": "The whitelist system is not enabled on this server.",
   "message.jwnsinvitationmod.whitelist.added": "You have invited %s to this server.",

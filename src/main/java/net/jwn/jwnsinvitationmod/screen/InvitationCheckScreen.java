@@ -4,7 +4,6 @@ import net.jwn.jwnsinvitationmod.JWNsMod;
 import net.jwn.jwnsinvitationmod.networking.packet.InvitationC2SPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.screens.Screen;

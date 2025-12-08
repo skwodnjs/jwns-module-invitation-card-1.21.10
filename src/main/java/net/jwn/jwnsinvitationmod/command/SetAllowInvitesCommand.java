@@ -12,6 +12,7 @@ public class SetAllowInvitesCommand {
         dispatcher.register(
             Commands.literal("gamerule")
             .then(Commands.literal("allowInvites")
+            .requires(source -> source.getServer().isDedicatedServer())
             .then(Commands.literal("set")
             .then(Commands.argument("value", BoolArgumentType.bool())
             .executes(ctx -> {

@@ -26,7 +26,7 @@ import java.util.UUID;
 
 public record InvitationC2SPacket(String inviter, String invitee) implements CustomPacketPayload {
     public static final CustomPacketPayload.Type<InvitationC2SPacket> TYPE =
-            new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "invitation_data"));
+            new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "invitation_packet"));
 
     public static final StreamCodec<ByteBuf, InvitationC2SPacket> STREAM_CODEC = StreamCodec.composite(
             ByteBufCodecs.STRING_UTF8, InvitationC2SPacket::inviter,

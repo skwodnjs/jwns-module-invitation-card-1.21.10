@@ -1,8 +1,6 @@
 package net.jwn.jwnsinvitationmod.screen;
 
 import net.jwn.jwnsinvitationmod.JWNsMod;
-import net.jwn.jwnsinvitationmod.item.ModItemsClientHandler;
-import net.jwn.jwnsinvitationmod.networking.packet.InvitationC2SPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
@@ -12,7 +10,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
 public class InvitationScreen extends Screen {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "textures/gui/invitation.png");
