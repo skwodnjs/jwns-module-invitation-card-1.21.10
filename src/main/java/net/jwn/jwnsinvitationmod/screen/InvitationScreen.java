@@ -15,21 +15,26 @@ import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
 public class InvitationScreen extends Screen {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "textures/gui/invitation.png");
-    private static final ResourceLocation BUTTON = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "button01");
-    private static final ResourceLocation BUTTON_PRESSED = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "button02");
+    private static final ResourceLocation BUTTON = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "button1");
+    private static final ResourceLocation BUTTON_PRESSED = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "button1_highlighted");
 
     private static String name = "";
 
     private static final int IMAGE_WIDTH = 256;
     private static final int IMAGE_HEIGHT = 256;
-    private static final int DRAW_WIDTH = 137;
-    private static final int DRAW_HEIGHT = 76;
+    private static final int DRAW_WIDTH = 140;
+    private static final int DRAW_HEIGHT = 90;
 
     private static final int BUTTON_WIDTH = 52;
-    private static final int BUTTON_HEIGHT = 16;
+    private static final int BUTTON_HEIGHT = 15;
 
-    private static final int BOX_WIDTH = 113;
+    private static final int BOX_WIDTH = 114;
     private static final int BOX_HEIGHT = 16;
+
+    int x;
+    int y;
+    int button_x;
+    int button_y;
 
     public InvitationScreen() {
         super(Component.translatable("item.jwnsinvitationmod.invitation_card"));
@@ -37,13 +42,14 @@ public class InvitationScreen extends Screen {
 
     @Override
     protected void init() {
-        int button_x = (this.width - BUTTON_WIDTH) / 2;
-        int button_y = (this.height - DRAW_HEIGHT) / 2 + 42;
+        x = (this.width - DRAW_WIDTH) / 2;
+        y = (this.height - DRAW_HEIGHT) / 2;
 
-        WidgetSprites widgetSprites = new WidgetSprites(BUTTON, BUTTON_PRESSED);
+        button_x = (this.width - BUTTON_WIDTH) / 2;
+        button_y = (this.height + DRAW_HEIGHT) / 2 - 10 - BUTTON_HEIGHT;
 
         ImageButton imageButton = new ImageButton(
-                button_x, button_y, BUTTON_WIDTH, BUTTON_HEIGHT, widgetSprites,
+                button_x, button_y, BUTTON_WIDTH, BUTTON_HEIGHT, new WidgetSprites(BUTTON, BUTTON_PRESSED),
                 button -> {
                     assert Minecraft.getInstance().player != null;
                     InvitationC2SPacket packet = new InvitationC2SPacket(Minecraft.getInstance().player.getPlainTextName(), name);
@@ -51,8 +57,8 @@ public class InvitationScreen extends Screen {
                     this.onClose();
                 });
 
-        int box_x = (this.width - BOX_WIDTH) / 2 + 4;
-        int box_y = (this.height - DRAW_HEIGHT) / 2 + 26;
+        int box_x = (this.width - BOX_WIDTH) / 2 + 2;
+        int box_y = y + 32 + 4;
 
         EditBox nameField = new EditBox(
                 this.font,
@@ -71,8 +77,6 @@ public class InvitationScreen extends Screen {
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        int x = (this.width - DRAW_WIDTH) / 2;
-        int y = (this.height - DRAW_HEIGHT) / 2;
 
         graphics.blit(
                 RenderPipelines.GUI_TEXTURED, TEXTURE, x, y,
@@ -86,6 +90,6 @@ public class InvitationScreen extends Screen {
 
         graphics.drawString(this.font, Component.translatable("gui.jwnsinvitationmod.invitaiton_card.button"),
             (this.width - this.font.width(Component.translatable("gui.jwnsinvitationmod.invitaiton_card.button"))) / 2,
-                (this.height - DRAW_HEIGHT) / 2 + 46, 0xFF000000, false);
+                button_y + 3, 0xFF000000, false);
     }
 }
