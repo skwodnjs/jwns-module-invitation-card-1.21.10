@@ -12,8 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ClearWhitelistCommand {
-    private static final Logger log = LoggerFactory.getLogger(ClearWhitelistCommand.class);
-
     public ClearWhitelistCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("whitelist")
                 .requires(source ->
@@ -32,7 +30,7 @@ public class ClearWhitelistCommand {
             whitelist.clear();
             context.getSource().sendSuccess(() -> Component.translatable("message.jwnsinvitationmod.whitelist.clear"), true);
         } else {
-            context.getSource().sendSuccess(() -> Component.translatable("message.jwnsinvitationmod.whitelist.disabled"), true);
+            context.getSource().sendSuccess(() -> Component.translatable("message.jwnsinvitationmod.whitelist.not_using_whitelist"), true);
         }
 
         return 1;

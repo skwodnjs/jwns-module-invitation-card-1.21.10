@@ -1,6 +1,7 @@
 package net.jwn.jwnsinvitationmod.networking.packet;
 
 import io.netty.buffer.ByteBuf;
+import net.jwn.jwnsinvitationmod.Config;
 import net.jwn.jwnsinvitationmod.JWNsMod;
 import net.jwn.jwnsinvitationmod.item.ModItems;
 import net.minecraft.network.chat.Component;
@@ -45,6 +46,14 @@ public record InvitationC2SPacket(String inviter, String invitee) implements Cus
 
             ServerLevel level = player.level();
             MinecraftServer server = level.getServer();
+
+            if (!level.getServer().isUsingWhitelist()) {
+                player.displayClientMessage(Component.translatable("message.jwnsinvitationmod.whitelist.not_using_whitelist"), false);
+                return;
+            } else if (!Config.ALLOW_INVITES.get()) {
+                player.displayClientMessage(Component.translatable("message.jwnsinvitationmod.whitelist.inactive"), false);
+                return;
+            }
 
             PlayerList playerList = server.getPlayerList();
             UserWhiteList whitelist = playerList.getWhiteList();
