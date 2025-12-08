@@ -50,7 +50,7 @@ public record InvitationC2SPacket(String inviter, String invitee) implements Cus
             if (!level.getServer().isUsingWhitelist()) {
                 player.displayClientMessage(Component.translatable("message.jwnsinvitationmod.whitelist.not_using_whitelist"), false);
                 return;
-            } else if (!Config.ALLOW_INVITES.get()) {
+            } else if (false) {
                 player.displayClientMessage(Component.translatable("message.jwnsinvitationmod.whitelist.inactive"), false);
                 return;
             }

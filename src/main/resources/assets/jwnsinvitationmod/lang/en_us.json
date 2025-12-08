@@ -8,7 +8,13 @@
 
   "message.jwnsinvitationmod.gamerule.allow_invite": "Gamerule allowInvite is now set to: %s",
 
+  "message.jwnsinvitationmod.invitaiton_card.cancel": "The invitation has been canceled.",
+
   "gui.jwnsinvitationmod.invitaiton_card.comment": "Please enter the name of the player to invite.",
   "gui.jwnsinvitationmod.invitaiton_card.button": "Invite",
+  "gui.jwnsinvitationmod.invitaiton_card.yes": "Yes",
+  "gui.jwnsinvitationmod.invitaiton_card.no": "No",
+  "gui.jwnsinvitationmod.invitaiton_card.intive_success": "Would you like to invite %s?",
+
   "jwnsinvitationmod.networking.failed": "Invitation failed: %s"
 }

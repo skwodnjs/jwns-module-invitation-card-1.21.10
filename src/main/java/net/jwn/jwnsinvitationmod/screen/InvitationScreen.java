@@ -1,6 +1,7 @@
 package net.jwn.jwnsinvitationmod.screen;
 
 import net.jwn.jwnsinvitationmod.JWNsMod;
+import net.jwn.jwnsinvitationmod.item.ModItemsClientHandler;
 import net.jwn.jwnsinvitationmod.networking.packet.InvitationC2SPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,6 +16,7 @@ import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
 public class InvitationScreen extends Screen {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "textures/gui/invitation.png");
+    private static final ResourceLocation TEXT_BOX = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "text_box");
     private static final ResourceLocation BUTTON = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "button1");
     private static final ResourceLocation BUTTON_PRESSED = ResourceLocation.fromNamespaceAndPath(JWNsMod.MOD_ID, "button1_highlighted");
 
@@ -35,6 +37,8 @@ public class InvitationScreen extends Screen {
     int y;
     int button_x;
     int button_y;
+    int box_x;
+    int box_y;
 
     public InvitationScreen() {
         super(Component.translatable("item.jwnsinvitationmod.invitation_card"));
@@ -52,17 +56,19 @@ public class InvitationScreen extends Screen {
                 button_x, button_y, BUTTON_WIDTH, BUTTON_HEIGHT, new WidgetSprites(BUTTON, BUTTON_PRESSED),
                 button -> {
                     assert Minecraft.getInstance().player != null;
-                    InvitationC2SPacket packet = new InvitationC2SPacket(Minecraft.getInstance().player.getPlainTextName(), name);
-                    ClientPacketDistributor.sendToServer(packet);
-                    this.onClose();
+//                    InvitationC2SPacket packet = new InvitationC2SPacket(Minecraft.getInstance().player.getPlainTextName(), name);
+//                    ClientPacketDistributor.sendToServer(packet);
+//                    this.onClose();
+                    Minecraft.getInstance().setScreen(new InvitationCheckScreen(name));
                 });
+        addRenderableWidget(imageButton);
 
-        int box_x = (this.width - BOX_WIDTH) / 2 + 2;
-        int box_y = y + 32 + 4;
+        box_x = (this.width - BOX_WIDTH) / 2;
+        box_y = y + 32;
 
         EditBox nameField = new EditBox(
                 this.font,
-                box_x, box_y,
+                box_x + 2, box_y + 4,
                 BOX_WIDTH, BOX_HEIGHT,
                 Component.empty()
         );
@@ -70,9 +76,7 @@ public class InvitationScreen extends Screen {
         nameField.setBordered(false);
         nameField.setValue("");
         nameField.setResponder(text -> name = text);
-        this.addRenderableWidget(nameField);
-
-        addRenderableWidget(imageButton);
+        addRenderableWidget(nameField);
     }
 
     @Override
@@ -83,6 +87,8 @@ public class InvitationScreen extends Screen {
                 0.0F, 0.0F, DRAW_WIDTH, DRAW_HEIGHT,
                 DRAW_WIDTH, DRAW_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT
         );
+
+        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, TEXT_BOX, box_x, box_y, BOX_WIDTH, BOX_HEIGHT);
 
         super.render(graphics, mouseX, mouseY, partialTicks);
 

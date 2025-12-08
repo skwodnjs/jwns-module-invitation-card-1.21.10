@@ -2,14 +2,19 @@
   "item.jwnsinvitationmod.invitation_card": "초대장",
   "message.jwnsinvitationmod.whitelist.clear": "화이트리스트가 모두 초기화되었습니다.",
   "message.jwnsinvitationmod.whitelist.not_using_whitelist": "이 서버에서는 화이트리스트 기능이 활성화되어 있지 않습니다.",
-  "message.jwnsinvitationmod.whitelist.added": "%s 을(를) 서버에 초대하셨습니다.",
+  "message.jwnsinvitationmod.whitelist.added": "%s 님을 서버에 초대하셨습니다.",
   "message.jwnsinvitationmod.whitelist.already_exists": "%s 이(가) 이미 화이트리스트에 있습니다.",
   "message.jwnsinvitationmod.whitelist.inactive": "초대 기능이 비활성화 되어 있습니다. 서버 관리자에게 문의하세요.",
 
   "message.jwnsinvitationmod.gamerule.allow_invite": "allowInvite 게임 규칙의 값은 이제 다음과 같습니다: %s",
 
+  "message.jwnsinvitationmod.invitaiton_card.cancel": "초대장 사용을 취소하였습니다.",
+
   "gui.jwnsinvitationmod.invitaiton_card.comment": "초대할 플레이어의 이름을 입력해주세요.",
   "gui.jwnsinvitationmod.invitaiton_card.button": "초대하기",
+  "gui.jwnsinvitationmod.invitaiton_card.yes": "예",
+  "gui.jwnsinvitationmod.invitaiton_card.no": "아니오",
+  "gui.jwnsinvitationmod.invitaiton_card.intive_success": "%s 님을 초대하시겠습니까?",
 
   "jwnsinvitationmod.networking.failed": "초대 실패: %s"
 }
