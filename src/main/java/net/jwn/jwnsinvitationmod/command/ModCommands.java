@@ -12,6 +12,7 @@ public class ModCommands {
     public static void onCommandsRegister(RegisterCommandsEvent event) {
         new ClearWhitelistCommand(event.getDispatcher());
         new SetAllowInvitesCommand(event.getDispatcher());
+        new GetAllowInvitesCommand(event.getDispatcher());
         ConfigCommand.register(event.getDispatcher());
     }
 }

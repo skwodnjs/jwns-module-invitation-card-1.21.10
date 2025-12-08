@@ -6,7 +6,8 @@
   "message.jwnsinvitationmod.whitelist.already_exists": "%s is already whitelisted.",
   "message.jwnsinvitationmod.whitelist.inactive": "The invitation feature is currently disabled. Please contact the server administrator.",
 
-  "message.jwnsinvitationmod.gamerule.allow_invite": "Gamerule allowInvite is now set to: %s",
+  "message.jwnsinvitationmod.gamerule.set_allow_invite": "Gamerule allowInvite is now set to: %s",
+  "message.jwnsinvitationmod.gamerule.get_allow_invite": "Gamerule allowInvite is: %s",
 
   "message.jwnsinvitationmod.invitaiton_card.cancel": "The invitation has been canceled.",
 

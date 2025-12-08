@@ -6,7 +6,8 @@
   "message.jwnsinvitationmod.whitelist.already_exists": "%s 이(가) 이미 화이트리스트에 있습니다.",
   "message.jwnsinvitationmod.whitelist.inactive": "초대 기능이 비활성화 되어 있습니다. 서버 관리자에게 문의하세요.",
 
-  "message.jwnsinvitationmod.gamerule.allow_invite": "allowInvite 게임 규칙의 값은 이제 다음과 같습니다: %s",
+  "message.jwnsinvitationmod.gamerule.set_allow_invite": "allowInvite 게임 규칙의 값은 이제 다음과 같습니다: %s",
+  "message.jwnsinvitationmod.gamerule.get_allow_invite": "allowInvite 게임 규칙의 값은 다음과 같습니다: %s",
 
   "message.jwnsinvitationmod.invitaiton_card.cancel": "초대장 사용을 취소하였습니다.",
 

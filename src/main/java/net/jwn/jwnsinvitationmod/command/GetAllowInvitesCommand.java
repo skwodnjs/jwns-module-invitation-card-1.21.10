@@ -7,23 +7,21 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 
-public class SetAllowInvitesCommand {
-    public SetAllowInvitesCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
+public class GetAllowInvitesCommand {
+    public GetAllowInvitesCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
             Commands.literal("gamerule")
             .then(Commands.literal("allowInvites")
-            .then(Commands.literal("set")
-            .then(Commands.argument("value", BoolArgumentType.bool())
+            .then(Commands.literal("get")
             .executes(ctx -> {
-                boolean value = BoolArgumentType.getBool(ctx, "value");
                 InvitationSettingsData data = InvitationSettingsData.get(ctx.getSource().getServer());
-                data.setAllowInvite(value);
+                boolean allowed = data.isAllowInvite();
                 ctx.getSource().sendSuccess(
-                    () -> Component.translatable("message.jwnsinvitationmod.gamerule.set_allow_invite", value ? "true" : "false"),
+                    () -> Component.translatable("message.jwnsinvitationmod.gamerule.get_allow_invite", allowed ? "true" : "false"),
                     true
                 );
                 return 1;
-            }))))
+            })))
         );
     }
 }

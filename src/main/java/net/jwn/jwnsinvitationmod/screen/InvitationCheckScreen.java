@@ -85,8 +85,8 @@ public class InvitationCheckScreen extends Screen {
         graphics.drawString(this.font, this.title, x + 8, y + 8, 0xFF000000, false);
 
         Component text = Component.translatable("gui.jwnsinvitationmod.invitaiton_card.intive_success", name);
-        int maxWidth = DRAW_WIDTH - 20;   // 줄바꿈 될 최대 가로폭
-        int startX = x + 10;
+        int maxWidth = DRAW_WIDTH - 16;
+        int startX = x + 8;
         int startY = y + 24;
 
         List<FormattedCharSequence> lines = this.font.split(text, maxWidth);
